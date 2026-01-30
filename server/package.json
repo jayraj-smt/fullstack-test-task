@@ -1,0 +1,37 @@
+{
+  "name": "tms-backend",
+  "version": "0.1.0",
+  "description": "Transportation Management System - Backend POC",
+  "type": "module",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon --watch src --ext js --exec node src/server.js",
+    "migrate": "node src/scripts/migrate.js",
+    "seed": "node src/scripts/seed.js",
+    "init:db": "npm run migrate && npm run seed",
+    "migrate:undo": "node src/scripts/migrate.js down",
+    "lint": "eslint . --ext .js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "apollo-server": "^3.11.1",
+    "bcrypt": "^5.1.0",
+    "date-fns": "^2.30.0",
+    "dotenv": "^16.3.1",
+    "graphql": "^16.7.1",
+    "jsonwebtoken": "^9.0.0",
+    "pg": "^8.11.0",
+    "sequelize": "^6.35.3",
+    "umzug": "^3.8.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.45.0",
+    "nodemon": "^3.0.4"
+  }
+}
